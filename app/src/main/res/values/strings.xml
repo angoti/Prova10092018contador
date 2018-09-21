@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Prova - 10/09/2018 - contador</string>
+    <string name="menos">-1</string>
+    <string name="mais">+1</string>
+    <string name="zerar">Zerar contagem</string>
+    <string name="contagem">Contagem: </string>
+    <string name="_0">0</string>
+</resources>

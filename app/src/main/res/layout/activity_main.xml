@@ -1,0 +1,98 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/myTextTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/visorEditText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="5dp"
+        android:text="@string/contagem"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/visorEditText"
+        app:layout_constraintEnd_toStartOf="@+id/visorEditText"
+        app:layout_constraintTop_toTopOf="@+id/visorEditText" />
+
+    <EditText
+        android:id="@+id/visorEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#00ff00"
+        android:ems="5"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="@string/_0"
+        android:textColor="#ffffff"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" /> <!-- O ems é usado para definir a largura dos componentes com relação a fonte atual,
+        logo seu TextView vai ter a largura necessária para mostrar a quantidade de caracteres que você definir usando o ems.
+        Entretanto para surtir efeito é necessário definir o layout_width como wrap_content, pois os outros tipos
+        de layout sobreescrevem a configuração de largura ems.-->
+
+    <Button
+        android:id="@+id/subtraçãoButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/zerarButton"
+        android:layout_alignLeft="@+id/somaButton"
+        android:layout_alignRight="@+id/somaButton"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="acao"
+        android:text="@string/menos"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/somaButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/somaButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/subtraçãoButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/visorEditText"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:nestedScrollingEnabled="false"
+        android:onClick="acao"
+        android:text="@string/mais"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/zerarButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/zerarButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/subtraçãoButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/subtraçãoButton"
+        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="acao"
+        android:text="@string/zerar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
